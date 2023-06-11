@@ -60,7 +60,7 @@ DWORD WINAPI Drista_OnLoad(LPVOID)
 
 	if (!hZip)
 	{
-		MessageBox(NULL, xor ("ZIP not found."), xor ("DullWave | Error"), MB_OK | MB_ICONERROR);
+		MessageBox(NULL, xor ("ZIP not found."), xor ("STERN | Error"), MB_OK | MB_ICONERROR);
 		Close;
 	}
 
@@ -68,13 +68,13 @@ DWORD WINAPI Drista_OnLoad(LPVOID)
 
 	if (MH_CreateHook(ZFO, &ZipOpen_Detour, reinterpret_cast<LPVOID*>(&ZipOpen_Original)) != MH_OK)
 	{
-		MessageBox(NULL, xor ("Failed to create trampoline."), xor ("DullWave | Error"), MB_OK | MB_ICONERROR);
+		MessageBox(NULL, xor ("Failed to create trampoline."), xor ("STERN| Error"), MB_OK | MB_ICONERROR);
 		Close;
 	}
 
 	if (MH_EnableHook(ZFO) != MH_OK)
 	{
-		MessageBox(NULL, xor ("Failed to enable trampoline."), xor ("DullWave | Error"), MB_OK | MB_ICONERROR);
+		MessageBox(NULL, xor ("Failed to enable trampoline."), xor ("STERN | Error"), MB_OK | MB_ICONERROR);
 		Close;
 	}
 
